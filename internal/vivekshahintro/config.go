@@ -11,7 +11,9 @@ import (
 
 	"github.com/getoutreach/gobox/pkg/cfg"
 	"github.com/getoutreach/gobox/pkg/log"
+
 	// <<Stencil::Block(configImports)>>
+	"github.com/getoutreach/smartstore/pkg/smartstore"
 	// <</Stencil::Block>>
 )
 
@@ -22,7 +24,7 @@ type Config struct {
 	GRPCPort   int    `yaml:"GRPCPort"`
 
 	// <<Stencil::Block(config)>>
-
+	ConnMap smartstore.ConnPoolRouterMap `yaml:"-"`
 	// <</Stencil::Block>>
 }
 

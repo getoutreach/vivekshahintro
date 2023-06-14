@@ -3,6 +3,7 @@
 # Node modules
 
 node_modules/
+api/clients/node/node_modules/
 
 # Temorary files
 .devspace/

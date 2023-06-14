@@ -1,0 +1,2 @@
+# Contains asdf versions for a node.js gRPC client.
+nodejs 16.19.0

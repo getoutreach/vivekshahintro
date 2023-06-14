@@ -238,6 +238,7 @@ local mixins = [
   import './mixins/accounts.jsonnet',
   import './mixins/devenv.jsonnet',
   import './mixins/mint.jsonnet',
+  import './mixins/postgresql.jsonnet',
   import './mixins/tollgate.jsonnet',
 ];
 local mergedMixins = std.foldl(function(x, y) (x + y), mixins, {});

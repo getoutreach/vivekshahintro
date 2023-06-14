@@ -43,4 +43,15 @@ RUN apk add --no-cache curl \
 ## <</Stencil::Block>>
 
 COPY --from=builder /src/bin/vivekshahintro /usr/local/bin/vivekshahintro
+
+# Begin afterBuild module hook entries
+
+# Smartstore Integration
+COPY --from=builder /src/bin/vivekshahintro-migrations /usr/local/bin/vivekshahintro-migrations
+COPY --from=builder /src/migrations /run/config/outreach.io/migrations
+# The below bin is needed for administrative actions like shard split/apply
+RUN apk add --no-cache postgresql-client
+COPY --from=gcr.io/outreach-docker/smartstore:v1.112.6 /usr/local/bin/smartstore /usr/local/bin/smartstore
+
+# End afterBuild module hook entries
 USER systemuser

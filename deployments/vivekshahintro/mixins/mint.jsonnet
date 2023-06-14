@@ -13,7 +13,7 @@ local all = {
       annotations+: {
         'outreach.io/authn-v1-service-id': 'vivekshahintro@outreach.cloud',
         'outreach.io/authn-v1-alias-ids': 'platform-services@outreach.cloud',
-        'outreach.io/authn-v1-audience-ids': 'orgservice@outreach.cloud tollmon@outreach.cloud',
+        'outreach.io/authn-v1-audience-ids': 'orgservice@outreach.cloud tollmon@outreach.cloud orgapi@outreach.cloud',
         'outreach.io/authn-v1-can-impersonate-user': 'false',
         'outreach.io/authn-v1-permitted-user-scopes': '',
         'outreach.io/authn-v1-sa-audience-ids': '',
@@ -113,7 +113,7 @@ local developmentResources = {
     metadata+: {
       annotations+: {
         'outreach.io/authn-v1-service-id': '%s-e2e-client@outreach.cloud' % app.name,
-        'outreach.io/authn-v1-audience-ids': 'orgservice@outreach.cloud tollmon@outreach.cloud vivekshahintro@outreach.cloud flagship@outreach.cloud flagship-internal@outreach.cloud',
+        'outreach.io/authn-v1-audience-ids': 'orgservice@outreach.cloud tollmon@outreach.cloud orgapi@outreach.cloud vivekshahintro@outreach.cloud flagship@outreach.cloud flagship-internal@outreach.cloud',
         'outreach.io/authn-v1-can-impersonate-user': 'true',
         'outreach.io/authn-v1-permitted-user-scopes': 'AAA=',
         'outreach.io/authn-v1-sa-audience-ids': '',

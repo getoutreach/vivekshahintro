@@ -1,11 +1,22 @@
 # example service.yaml
 name: vivekshahintro
 arguments:
+  grpcClients:
+    - node
   deployment:
     environments:
       - ops
     serviceDomains:
       - bento
+  postgreSQL:
+    - name: vivekshahintro
+      version: "13.4"
+      databaseName: vivekshahintro
+      parameterGroupFamily: aurora-postgresql13
+      tier: tier-2
+      schemas:
+        - name: vivekshahintro
+          target: Org
   description: Tutorial service for the purpose of enlightenment and enrichment
   lifecycle: in_development
   lintroller: platinum
@@ -27,5 +38,7 @@ modules:
   - name: github.com/getoutreach/devbase
     channel: rc
   - name: github.com/getoutreach/stencil-outreach
+    channel: rc
+  - name: github.com/getoutreach/stencil-smartstore
     channel: rc
 migrated: true

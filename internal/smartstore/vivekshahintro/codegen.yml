@@ -1,0 +1,17 @@
+# This file is a smartstore codegen configuration for the vivekshahintro store.
+# All paths in this file are relative to the location of this file which is the repo's root.
+app_name: vivekshahintro
+resource_name: vivekshahintro
+migrations:
+  path: ../../../migrations
+tables:
+# jet instructs the codegen to run schema migrations and invoke go-jet on the result PostgreSQL.
+# The generated model and table structs are copied to the dest_path below, they are used for
+# smartstore CDC in Q1.
+jet:
+  dest_path: jet
+  package_prefix: github.com/getoutreach/vivekshahintro/internal/smartstore/vivekshahintro/jet
+# additional features can be configured here
+###Block(extras)
+
+###EndBlock(extras)

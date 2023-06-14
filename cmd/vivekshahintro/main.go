@@ -78,6 +78,19 @@ func main() { //nolint: funlen // Why: We can't dwindle this down anymore withou
 
 	// Code inserted by modules
 
+	// Injected by stencil-smartstore
+	smartStoreDeps, err := setupSmartStoreIntegration(ctx)
+	if err != nil {
+		log.Error(ctx, "failed to setup smartstore integration", events.NewErrorInfo(err))
+		return
+	}
+	defer func() {
+		err := smartStoreDeps.Close(ctx)
+		if err != nil {
+			log.Error(ctx, "error closing smartstore dependencies", events.NewErrorInfo(err))
+		}
+	}()
+
 	// Create a tollway instance to register tollgate instances for rate limiting http/grpc servers onto.
 	tw := tollway.NewProxy(ctx)
 	deps.gRPC.TollwayProxy = tw

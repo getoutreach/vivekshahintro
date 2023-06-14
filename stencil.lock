@@ -6,6 +6,9 @@ modules:
     - name: github.com/getoutreach/stencil-base
       url: https://github.com/getoutreach/stencil-base
       version: v0.12.0-rc.1
+    - name: github.com/getoutreach/stencil-clerk
+      url: https://github.com/getoutreach/stencil-clerk
+      version: v1.6.1
     - name: github.com/getoutreach/stencil-discovery
       url: https://github.com/getoutreach/stencil-discovery
       version: v1.6.0
@@ -18,6 +21,9 @@ modules:
     - name: github.com/getoutreach/stencil-pipeline
       url: https://github.com/getoutreach/stencil-pipeline
       version: v1.1.0
+    - name: github.com/getoutreach/stencil-smartstore
+      url: https://github.com/getoutreach/stencil-smartstore
+      version: v1.9.2-rc.2
 files:
     - name: .air.toml
       template: .air.toml.tpl
@@ -79,20 +85,62 @@ files:
     - name: README.md
       template: README.md.tpl
       module: github.com/getoutreach/stencil-base
+    - name: api/clients/node/.eslintrc.js
+      template: api/clients/node/.eslintrc.js.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/.gitignore
+      template: api/clients/node/.gitignore.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/.npmignore
+      template: api/clients/node/.npmignore.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/.prettierignore
+      template: api/clients/node/.prettierignore.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/.tool-versions
+      template: api/clients/node/.tool-versions.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/README.md
+      template: api/clients/node/README.md.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/bootstrap.js
+      template: api/clients/node/bootstrap.js.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/doc.go
+      template: api/clients/node/doc.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/generate.go
+      template: api/clients/node/generate.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/jest.config.js
+      template: api/clients/node/jest.config.js.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/package.hjson
+      template: api/clients/node/package.hjson.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/scripts/copy-definitions.js
+      template: api/clients/node/scripts/copy-definitions.js.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/src/client-helpers.spec.ts
+      template: api/clients/node/src/client-helpers.spec.ts.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/src/client-helpers.ts
+      template: api/clients/node/src/client-helpers.ts.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/src/index.ts
+      template: api/clients/node/src/index.ts.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/tsconfig.json
+      template: api/clients/node/tsconfig.json.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/clients/node/tsconfig.production.json
+      template: api/clients/node/tsconfig.production.json.tpl
+      module: github.com/getoutreach/stencil-golang
     - name: api/doc.go
       template: api/doc.go.tpl
       module: github.com/getoutreach/stencil-golang
     - name: api/rpc_helpers.go
       template: api/rpc_helpers.go.tpl
-      module: github.com/getoutreach/stencil-golang
-    - name: api/vivekshahintro.go
-      template: api/api.go.tpl
-      module: github.com/getoutreach/stencil-golang
-    - name: api/vivekshahintro.proto
-      template: api/api.proto.tpl
-      module: github.com/getoutreach/stencil-golang
-    - name: api/vivekshahintro/client.go
-      template: api/rpc/client.go.tpl
       module: github.com/getoutreach/stencil-golang
     - name: api/vivekshahintro/doc.go
       template: api/rpc/doc.go.tpl
@@ -103,9 +151,15 @@ files:
     - name: atlantis.yaml
       template: atlantis.yaml.tpl
       module: github.com/getoutreach/stencil-outreach
+    - name: cmd/vivekshahintro-migrations/main.go
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: cmd/vivekshahintro/main.go
       template: cmd/main.go.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: cmd/vivekshahintro/smartstore.go
+      template: cmd/smartstore.go.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: concourse/pipeline.jsonnet
       template: concourse/pipeline.jsonnet.tpl
       module: github.com/getoutreach/stencil-outreach
@@ -118,6 +172,9 @@ files:
     - name: deployments/vivekshahintro/Dockerfile
       template: deployments/appname/Dockerfile.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/configs/postgresql.config.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: deployments/vivekshahintro/configs/tollgate.jsonnet
       template: deployments/app/configs/tollgate.jsonnet.tpl
       module: github.com/getoutreach/stencil-outreach
@@ -130,12 +187,30 @@ files:
     - name: deployments/vivekshahintro/mixins/mint.jsonnet
       template: deployments/app/mixins/mint.jsonnet.tpl
       module: github.com/getoutreach/stencil-outreach
+    - name: deployments/vivekshahintro/mixins/postgresql.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: deployments/vivekshahintro/mixins/tollgate.jsonnet
       template: deployments/app/mixins/tollgate.jsonnet.tpl
       module: github.com/getoutreach/stencil-outreach
     - name: deployments/vivekshahintro/resources.libsonnet
       template: deployments/appname/resources.libsonnet.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/smartstore/postgresql.migrations.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: deployments/vivekshahintro/smartstore/postgresql.volumes.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: deployments/vivekshahintro/smartstore/smartstore.libsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: deployments/vivekshahintro/smartstore/split.apply.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: deployments/vivekshahintro/smartstore/split.plan.jsonnet
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: deployments/vivekshahintro/vivekshahintro.config.jsonnet
       template: deployments/appname/app.config.jsonnet.tpl
       module: github.com/getoutreach/stencil-golang
@@ -208,6 +283,15 @@ files:
     - name: internal/orglifecycle/orglifecycle.go
       template: internal/orglifecycle/orglifecycle.go.tpl
       module: github.com/getoutreach/stencil-outreach
+    - name: internal/smartstore/vivekshahintro/codegen.yml
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: internal/smartstore/vivekshahintro/generate/generate.go
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: internal/smartstore/vivekshahintro/smartstoregen.sh
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: internal/vivekshahintro/config.go
       template: internal/appName/config.go.tpl
       module: github.com/getoutreach/stencil-golang
@@ -220,9 +304,12 @@ files:
     - name: internal/vivekshahintro/rpc.go
       template: internal/appName/rpc/rpc.go.tpl
       module: github.com/getoutreach/stencil-golang
-    - name: internal/vivekshahintro/server.go
-      template: internal/appName/rpc/server.go.tpl
-      module: github.com/getoutreach/stencil-golang
+    - name: migrations/README.md
+      template: files.tpl
+      module: github.com/getoutreach/stencil-smartstore
+    - name: monitoring/clerk.tf
+      template: files.tpl
+      module: github.com/getoutreach/stencil-clerk
     - name: monitoring/dashboard.tf
       template: monitoring/dashboard.tf.tpl
       module: github.com/getoutreach/stencil-golang
@@ -238,6 +325,9 @@ files:
     - name: monitoring/slos.tf
       template: monitoring/slos.tf.tpl
       module: github.com/getoutreach/stencil-golang
+    - name: monitoring/smartstore.tf
+      template: monitoring/smartstore.tf.tpl
+      module: github.com/getoutreach/stencil-smartstore
     - name: monitoring/terraform.tfvars
       template: monitoring/terraform.tfvars.tpl
       module: github.com/getoutreach/stencil-golang

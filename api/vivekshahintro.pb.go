@@ -221,6 +221,93 @@ func (x *PongResponse) GetMessage() string {
 	return ""
 }
 
+// JokeRequest is the request for ping
+type JokeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *JokeRequest) Reset() {
+	*x = JokeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vivekshahintro_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *JokeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JokeRequest) ProtoMessage() {}
+
+func (x *JokeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_vivekshahintro_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JokeRequest.ProtoReflect.Descriptor instead.
+func (*JokeRequest) Descriptor() ([]byte, []int) {
+	return file_vivekshahintro_proto_rawDescGZIP(), []int{4}
+}
+
+// JokeResponse is the response for echo.
+type JokeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Joke string `protobuf:"bytes,1,opt,name=joke,proto3" json:"joke,omitempty"`
+}
+
+func (x *JokeResponse) Reset() {
+	*x = JokeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_vivekshahintro_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *JokeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*JokeResponse) ProtoMessage() {}
+
+func (x *JokeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_vivekshahintro_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use JokeResponse.ProtoReflect.Descriptor instead.
+func (*JokeResponse) Descriptor() ([]byte, []int) {
+	return file_vivekshahintro_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *JokeResponse) GetJoke() string {
+	if x != nil {
+		return x.Joke
+	}
+	return ""
+}
+
 var File_vivekshahintro_proto protoreflect.FileDescriptor
 
 var file_vivekshahintro_proto_rawDesc = []byte{
@@ -237,17 +324,25 @@ var file_vivekshahintro_proto_rawDesc = []byte{
 	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x28, 0x0a, 0x0c, 0x50, 0x6f, 0x6e, 0x67, 0x52, 0x65,
 	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x18, 0x0a, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67,
 	0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x6d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65,
-	0x32, 0xaa, 0x01, 0x0a, 0x0e, 0x56, 0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e,
-	0x74, 0x72, 0x6f, 0x12, 0x4b, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x1f, 0x2e, 0x76, 0x69,
+	0x22, 0x0d, 0x0a, 0x0b, 0x4a, 0x6f, 0x6b, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x22,
+	0x22, 0x0a, 0x0c, 0x4a, 0x6f, 0x6b, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x12, 0x0a, 0x04, 0x6a, 0x6f, 0x6b, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x6a,
+	0x6f, 0x6b, 0x65, 0x32, 0xf7, 0x01, 0x0a, 0x0e, 0x56, 0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61,
+	0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x12, 0x4b, 0x0a, 0x04, 0x50, 0x69, 0x6e, 0x67, 0x12, 0x1f,
+	0x2e, 0x76, 0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e,
+	0x61, 0x70, 0x69, 0x2e, 0x50, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
+	0x20, 0x2e, 0x76, 0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f,
+	0x2e, 0x61, 0x70, 0x69, 0x2e, 0x50, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x65, 0x22, 0x00, 0x12, 0x4b, 0x0a, 0x04, 0x50, 0x6f, 0x6e, 0x67, 0x12, 0x1f, 0x2e, 0x76, 0x69,
 	0x76, 0x65, 0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70, 0x69,
-	0x2e, 0x50, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x76,
+	0x2e, 0x50, 0x6f, 0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x76,
 	0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70,
-	0x69, 0x2e, 0x50, 0x69, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
-	0x12, 0x4b, 0x0a, 0x04, 0x50, 0x6f, 0x6e, 0x67, 0x12, 0x1f, 0x2e, 0x76, 0x69, 0x76, 0x65, 0x6b,
-	0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x50, 0x6f,
-	0x6e, 0x67, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x76, 0x69, 0x76, 0x65,
-	0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x50,
-	0x6f, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x42, 0x5a,
+	0x69, 0x2e, 0x50, 0x6f, 0x6e, 0x67, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00,
+	0x12, 0x4b, 0x0a, 0x04, 0x4a, 0x6f, 0x6b, 0x65, 0x12, 0x1f, 0x2e, 0x76, 0x69, 0x76, 0x65, 0x6b,
+	0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x4a, 0x6f,
+	0x6b, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x20, 0x2e, 0x76, 0x69, 0x76, 0x65,
+	0x6b, 0x73, 0x68, 0x61, 0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x4a,
+	0x6f, 0x6b, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x00, 0x42, 0x42, 0x5a,
 	0x29, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x67, 0x65, 0x74, 0x6f,
 	0x75, 0x74, 0x72, 0x65, 0x61, 0x63, 0x68, 0x2f, 0x76, 0x69, 0x76, 0x65, 0x6b, 0x73, 0x68, 0x61,
 	0x68, 0x69, 0x6e, 0x74, 0x72, 0x6f, 0x2f, 0x61, 0x70, 0x69, 0xea, 0x02, 0x14, 0x56, 0x69, 0x76,
@@ -267,20 +362,24 @@ func file_vivekshahintro_proto_rawDescGZIP() []byte {
 	return file_vivekshahintro_proto_rawDescData
 }
 
-var file_vivekshahintro_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_vivekshahintro_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_vivekshahintro_proto_goTypes = []interface{}{
 	(*PingRequest)(nil),  // 0: vivekshahintro.api.PingRequest
 	(*PingResponse)(nil), // 1: vivekshahintro.api.PingResponse
 	(*PongRequest)(nil),  // 2: vivekshahintro.api.PongRequest
 	(*PongResponse)(nil), // 3: vivekshahintro.api.PongResponse
+	(*JokeRequest)(nil),  // 4: vivekshahintro.api.JokeRequest
+	(*JokeResponse)(nil), // 5: vivekshahintro.api.JokeResponse
 }
 var file_vivekshahintro_proto_depIdxs = []int32{
 	0, // 0: vivekshahintro.api.Vivekshahintro.Ping:input_type -> vivekshahintro.api.PingRequest
 	2, // 1: vivekshahintro.api.Vivekshahintro.Pong:input_type -> vivekshahintro.api.PongRequest
-	1, // 2: vivekshahintro.api.Vivekshahintro.Ping:output_type -> vivekshahintro.api.PingResponse
-	3, // 3: vivekshahintro.api.Vivekshahintro.Pong:output_type -> vivekshahintro.api.PongResponse
-	2, // [2:4] is the sub-list for method output_type
-	0, // [0:2] is the sub-list for method input_type
+	4, // 2: vivekshahintro.api.Vivekshahintro.Joke:input_type -> vivekshahintro.api.JokeRequest
+	1, // 3: vivekshahintro.api.Vivekshahintro.Ping:output_type -> vivekshahintro.api.PingResponse
+	3, // 4: vivekshahintro.api.Vivekshahintro.Pong:output_type -> vivekshahintro.api.PongResponse
+	5, // 5: vivekshahintro.api.Vivekshahintro.Joke:output_type -> vivekshahintro.api.JokeResponse
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -340,6 +439,30 @@ func file_vivekshahintro_proto_init() {
 				return nil
 			}
 		}
+		file_vivekshahintro_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*JokeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_vivekshahintro_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*JokeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -347,7 +470,7 @@ func file_vivekshahintro_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_vivekshahintro_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   4,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -375,6 +498,7 @@ const _ = grpc.SupportPackageIsVersion6
 type VivekshahintroClient interface {
 	Ping(ctx context.Context, in *PingRequest, opts ...grpc.CallOption) (*PingResponse, error)
 	Pong(ctx context.Context, in *PongRequest, opts ...grpc.CallOption) (*PongResponse, error)
+	Joke(ctx context.Context, in *JokeRequest, opts ...grpc.CallOption) (*JokeResponse, error)
 }
 
 type vivekshahintroClient struct {
@@ -403,10 +527,20 @@ func (c *vivekshahintroClient) Pong(ctx context.Context, in *PongRequest, opts .
 	return out, nil
 }
 
+func (c *vivekshahintroClient) Joke(ctx context.Context, in *JokeRequest, opts ...grpc.CallOption) (*JokeResponse, error) {
+	out := new(JokeResponse)
+	err := c.cc.Invoke(ctx, "/vivekshahintro.api.Vivekshahintro/Joke", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // VivekshahintroServer is the server API for Vivekshahintro service.
 type VivekshahintroServer interface {
 	Ping(context.Context, *PingRequest) (*PingResponse, error)
 	Pong(context.Context, *PongRequest) (*PongResponse, error)
+	Joke(context.Context, *JokeRequest) (*JokeResponse, error)
 }
 
 // UnimplementedVivekshahintroServer can be embedded to have forward compatible implementations.
@@ -418,6 +552,9 @@ func (*UnimplementedVivekshahintroServer) Ping(context.Context, *PingRequest) (*
 }
 func (*UnimplementedVivekshahintroServer) Pong(context.Context, *PongRequest) (*PongResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Pong not implemented")
+}
+func (*UnimplementedVivekshahintroServer) Joke(context.Context, *JokeRequest) (*JokeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Joke not implemented")
 }
 
 func RegisterVivekshahintroServer(s *grpc.Server, srv VivekshahintroServer) {
@@ -460,6 +597,24 @@ func _Vivekshahintro_Pong_Handler(srv interface{}, ctx context.Context, dec func
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Vivekshahintro_Joke_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(JokeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(VivekshahintroServer).Joke(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/vivekshahintro.api.Vivekshahintro/Joke",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(VivekshahintroServer).Joke(ctx, req.(*JokeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Vivekshahintro_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "vivekshahintro.api.Vivekshahintro",
 	HandlerType: (*VivekshahintroServer)(nil),
@@ -471,6 +626,10 @@ var _Vivekshahintro_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Pong",
 			Handler:    _Vivekshahintro_Pong_Handler,
+		},
+		{
+			MethodName: "Joke",
+			Handler:    _Vivekshahintro_Joke_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

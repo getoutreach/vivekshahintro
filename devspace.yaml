@@ -119,6 +119,12 @@ dev:
           - bin
           - ./vendor
           - node_modules
+          - api/clients/node/node_modules/
+      # path is <localSubPath>:<containerPath>
+      - path: ./src/migrations:${DEV_CONTAINER_WORKDIR}/run/config/outreach.io/migrations
+        excludePaths:
+          - bin
+          - ./vendor
 
     # Since our Helm charts and manifests deployments are often optimized for production,
     # DevSpace let's you swap out Pods dynamically to get a better dev environment
@@ -370,6 +376,27 @@ profiles:
     activation:
       - vars:
           DEVENV_DEV_DEPLOYMENT_PROFILE: deployment__vivekshahintro
+  - name: deployment__vivekshahintro-migrations
+    description: Migrations app profile
+    activation:
+      - vars:
+          DEVENV_DEV_DEPLOYMENT_PROFILE: deployment__vivekshahintro-migrations
+    patches:
+      - op: replace
+        path: dev.app.labelSelector
+        value:
+          app: vivekshahintro-migrations
+      - op: replace
+        path: hooks[?(@.name=='make-dev')].container.labelSelector.app
+        value: vivekshahintro-migrations
+      - op: replace
+        path: dev.app.patches[?(@.value.name=='DEV_CONTAINER_EXECUTABLE')]
+        value:
+          op: add
+          path: spec.containers[0].env
+          value:
+            name: DEV_CONTAINER_EXECUTABLE
+            value: vivekshahintro-migrations
 
   ## <<Stencil::Block(profiles)>>
 

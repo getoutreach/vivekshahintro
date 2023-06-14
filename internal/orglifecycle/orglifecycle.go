@@ -27,6 +27,15 @@ var Default = func() lifecycle.Lifecycle {
 	// l holds the Lifecyle instance which is mutated throughout this
 	// method and returned at the end
 	var l = lifecycle.Lifecycle{
+		CreateRegistration: &orglifeapi.RegisterLifecycleConsumerRequest{
+			Name:        "vivekshahintro",
+			RequestType: orglifeapi.RegisterLifecycleConsumerRequest_CREATE,
+			// IsRequired: When true, results in orgservice sending a P1 page configured by
+			// NotifyFailureAfterSecs on failure for Creates
+			IsRequired:             false,
+			NotifyFailureAfterSecs: uint32((time.Minute * 5).Seconds()),
+			BentoAllowlist:         []string{"staging1a"},
+		},
 		ChurnRegistration: &orglifeapi.RegisterLifecycleConsumerRequest{
 			Name:        "vivekshahintro",
 			RequestType: orglifeapi.RegisterLifecycleConsumerRequest_CHURN,
@@ -43,6 +52,7 @@ var Default = func() lifecycle.Lifecycle {
 
 	// <<Stencil::Block(orgLifecycleDefaults)>>
 	// Modify the defaults from the lifecycle struct here
+
 	// <</Stencil::Block>>
 
 	return l

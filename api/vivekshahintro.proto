@@ -32,4 +32,12 @@ message PongResponse {
 service Vivekshahintro {
   rpc Ping(PingRequest) returns (PingResponse) {}
   rpc Pong(PongRequest) returns (PongResponse) {}
+  rpc Joke(JokeRequest) returns (JokeResponse) {}
+}
+// JokeRequest is the request for ping
+message JokeRequest {}
+
+// JokeResponse is the response for echo.
+message JokeResponse {
+  string joke = 1;
 }
