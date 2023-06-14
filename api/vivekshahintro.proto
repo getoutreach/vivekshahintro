@@ -1,0 +1,35 @@
+// Copyright 2023 Outreach Corporation. All Rights Reserved.
+// Please modify this to match the interface specified in vivekshahintro.go
+syntax = "proto3";
+
+package vivekshahintro.api;
+
+option go_package = "github.com/getoutreach/vivekshahintro/api";
+option ruby_package = "VivekshahintroClient";
+
+// Define your grpc service structures here
+// PingRequest is the request for ping
+message PingRequest {
+  string message = 1;
+}
+
+// PingResponse is the response for echo.
+message PingResponse {
+  string message = 1;
+}
+
+// PongRequest is the request for ping
+message PongRequest {
+  string message = 1;
+}
+
+// PongResponse is the response for echo.
+message PongResponse {
+  string message = 1;
+}
+
+// Vivekshahintro is the vivekshahintro service.
+service Vivekshahintro {
+  rpc Ping(PingRequest) returns (PingResponse) {}
+  rpc Pong(PongRequest) returns (PongResponse) {}
+}

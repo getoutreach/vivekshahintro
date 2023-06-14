@@ -1,0 +1,11 @@
+name: vivekshahintro
+repo: getoutreach/vivekshahintro
+pipelineTemplate: custom_segments
+deploymentSegments:
+  - name: "ops"
+# To change a workflow add your keys to the relevant block
+# for the channel workflow combination you want to change.
+#
+# Then re-run stencil, this will re-generate the workflow
+# replacing the default keys with your values.
+workflows:

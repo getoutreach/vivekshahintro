@@ -1,0 +1,261 @@
+version: v1.34.0
+modules:
+    - name: github.com/getoutreach/devbase
+      url: https://github.com/getoutreach/devbase
+      version: v2.14.0-rc.5
+    - name: github.com/getoutreach/stencil-base
+      url: https://github.com/getoutreach/stencil-base
+      version: v0.12.0-rc.1
+    - name: github.com/getoutreach/stencil-discovery
+      url: https://github.com/getoutreach/stencil-discovery
+      version: v1.6.0
+    - name: github.com/getoutreach/stencil-golang
+      url: https://github.com/getoutreach/stencil-golang
+      version: v1.12.0-rc.3
+    - name: github.com/getoutreach/stencil-outreach
+      url: https://github.com/getoutreach/stencil-outreach
+      version: v0.11.0-rc.1
+    - name: github.com/getoutreach/stencil-pipeline
+      url: https://github.com/getoutreach/stencil-pipeline
+      version: v1.1.0
+files:
+    - name: .air.toml
+      template: .air.toml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .dockerignore
+      template: .dockerignore.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .editorconfig
+      template: .editorconfig.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .gitattributes
+      template: .gitattributes.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .github/CODEOWNERS
+      template: .github/CODEOWNERS.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .github/dependabot.yml
+      template: .github/dependabot.yml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .github/pull_request_template.md
+      template: .github/pull_request_template.md.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .gitignore
+      template: .gitignore.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .prettierignore
+      template: .prettierignore.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .prettierrc.yaml
+      template: .prettierrc.yaml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .releaserc.yaml
+      template: .releaserc.yaml.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .tool-versions
+      template: .tool-versions.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: .vscode/extensions.json
+      template: .vscode/extensions.json.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .vscode/launch.json
+      template: .vscode/launch.json.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .vscode/outreach.code-snippets
+      template: .vscode/outreach.code-snippets.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: .vscode/private.env
+      template: .vscode/private.env.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: .vscode/settings.json
+      template: .vscode/settings.json.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: CONTRIBUTING.md
+      template: CONTRIBUTING.md.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: Makefile
+      template: Makefile.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: README.md
+      template: README.md.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: api/doc.go
+      template: api/doc.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/rpc_helpers.go
+      template: api/rpc_helpers.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/vivekshahintro.go
+      template: api/api.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/vivekshahintro.proto
+      template: api/api.proto.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/vivekshahintro/client.go
+      template: api/rpc/client.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: api/vivekshahintro/doc.go
+      template: api/rpc/doc.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: argocd/vivekshahintro.jsonnet
+      template: argocd/app.jsonnet.tpl
+      module: github.com/getoutreach/stencil-pipeline
+    - name: atlantis.yaml
+      template: atlantis.yaml.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: cmd/vivekshahintro/main.go
+      template: cmd/main.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: concourse/pipeline.jsonnet
+      template: concourse/pipeline.jsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: concourse/segments.libsonnet
+      template: concourse/segments.libsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: deployments/docker.yaml
+      template: deployments/docker.yaml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/Dockerfile
+      template: deployments/appname/Dockerfile.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/configs/tollgate.jsonnet
+      template: deployments/app/configs/tollgate.jsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: deployments/vivekshahintro/mixins/accounts.jsonnet
+      template: deployments/app/mixins/accounts.jsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: deployments/vivekshahintro/mixins/devenv.jsonnet
+      template: deployments/appname/mixins/devenv.jsonnet.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/mixins/mint.jsonnet
+      template: deployments/app/mixins/mint.jsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: deployments/vivekshahintro/mixins/tollgate.jsonnet
+      template: deployments/app/mixins/tollgate.jsonnet.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: deployments/vivekshahintro/resources.libsonnet
+      template: deployments/appname/resources.libsonnet.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/vivekshahintro.config.jsonnet
+      template: deployments/appname/app.config.jsonnet.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/vivekshahintro.jsonnet
+      template: deployments/appname/app.jsonnet.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: deployments/vivekshahintro/vivekshahintro.override.jsonnet
+      template: deployments/appname/app.override.jsonnet.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: devenv.yaml
+      template: devenv.yaml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: devspace.yaml
+      template: devspace.yaml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: documentation/README.md
+      template: documentation/README.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/SLOs.md
+      template: documentation/SLOs.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/deployments.md
+      template: documentation/deployments.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/disaster-recovery.md
+      template: documentation/disaster-recovery.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/rate-limiting-strategy.md
+      template: documentation/rate-limiting-strategy.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/rollout-plan.md
+      template: documentation/rollout-plan.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbook.md
+      template: documentation/runbook.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/available-pods-low.md
+      template: documentation/runbooks/available-pods-low.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/grpc-latency-high.md
+      template: documentation/runbooks/grpc-latency-high.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/grpc-success-rate-low.md
+      template: documentation/runbooks/grpc-success-rate-low.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/pod-cpu.md
+      template: documentation/runbooks/pod-cpu.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/pod-memory.md
+      template: documentation/runbooks/pod-memory.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/pod-restarts.md
+      template: documentation/runbooks/pod-restarts.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/runbooks/service-panics.md
+      template: documentation/runbooks/service-panics.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: documentation/scaling-plan.md
+      template: documentation/scaling-plan.md.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: go.mod
+      template: go.mod.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: internal/lifecycle/lifecycle.go
+      template: internal/lifecycle/lifecycle.go.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: internal/lifecycle/org.go
+      template: internal/lifecycle/org.go.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: internal/orglifecycle/orglifecycle.go
+      template: internal/orglifecycle/orglifecycle.go.tpl
+      module: github.com/getoutreach/stencil-outreach
+    - name: internal/vivekshahintro/config.go
+      template: internal/appName/config.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: internal/vivekshahintro/doc.go
+      template: internal/appName/doc.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: internal/vivekshahintro/httpservice.go
+      template: internal/appName/http/httpservice.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: internal/vivekshahintro/rpc.go
+      template: internal/appName/rpc/rpc.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: internal/vivekshahintro/server.go
+      template: internal/appName/rpc/server.go.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/dashboard.tf
+      template: monitoring/dashboard.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/datadog.tf
+      template: monitoring/datadog.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/grpc.tf
+      template: monitoring/grpc.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/main.tf
+      template: monitoring/main.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/slos.tf
+      template: monitoring/slos.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/terraform.tfvars
+      template: monitoring/terraform.tfvars.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: monitoring/versions.tf
+      template: monitoring/versions.tf.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: package.json
+      template: package.json.tpl
+      module: github.com/getoutreach/stencil-base
+    - name: pipeline.yaml
+      template: pipeline.yaml.tpl
+      module: github.com/getoutreach/stencil-pipeline
+    - name: scripts/devbase.sh
+      template: scripts/devbase.sh.tpl
+      module: github.com/getoutreach/devbase
+    - name: scripts/golangci.yml
+      template: scripts/golangci.yml.tpl
+      module: github.com/getoutreach/stencil-golang
+    - name: scripts/shell-wrapper.sh
+      template: scripts/shell-wrapper.sh.tpl
+      module: github.com/getoutreach/devbase

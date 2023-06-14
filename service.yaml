@@ -1,0 +1,31 @@
+# example service.yaml
+name: vivekshahintro
+arguments:
+  deployment:
+    environments:
+      - ops
+    serviceDomains:
+      - bento
+  description: Tutorial service for the purpose of enlightenment and enrichment
+  lifecycle: in_development
+  lintroller: platinum
+  metrics: datadog
+  opslevel:
+    confluenceSpaceKey: https://outreach-io.atlassian.net/wiki/spaces/SP/overview?homepageId=2320568393
+  reportingTeam: ce-success-plans-services
+  service: true
+  serviceActivities:
+    - grpc
+  tier: 2
+  tracing: opentelemetry
+  tutorial: true
+modules:
+  - name: github.com/getoutreach/stencil-base
+    channel: rc
+  - name: github.com/getoutreach/stencil-golang
+    channel: rc
+  - name: github.com/getoutreach/devbase
+    channel: rc
+  - name: github.com/getoutreach/stencil-outreach
+    channel: rc
+migrated: true

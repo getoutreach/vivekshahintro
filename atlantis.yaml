@@ -1,0 +1,40 @@
+version: 3
+automerge: false
+
+projects:
+  - &default
+    name: monitoring
+    dir: ./monitoring
+    terraform_version: v1.4.4
+    autoplan:
+      when_modified:
+        [
+          "*.tf",
+          "./**.tf",
+          "./modules/**/*.tf",
+          "*.tfvars",
+          "./**.tfvars",
+          "./modules/**/*.tfvars",
+        ]
+      enabled: true
+    apply_requirements: [mergeable, approved, undiverged]
+    workflow: default
+  ## <<Stencil::Block(projects)>>
+
+  ## <</Stencil::Block>>
+
+workflows:
+  default:
+    plan:
+      steps:
+        - run: /usr/bin/vault-login
+        - init
+        - run: tflint --init && tflint
+        - plan
+    apply:
+      steps:
+        - run: /usr/bin/vault-login
+        - apply
+  ## <<Stencil::Block(workflows)>>
+
+  ## <</Stencil::Block>>
