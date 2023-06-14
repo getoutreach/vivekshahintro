@@ -8,7 +8,6 @@
     "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "conventional-changelog-conventionalcommits": "^5.0.0",
-    "hjson": "^3.2.2",
     "prettier": "^2.7.1",
     "semantic-release": "^19.0.3",
     "semver": "^7.3.7"

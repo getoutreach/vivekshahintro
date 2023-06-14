@@ -119,7 +119,6 @@ dev:
           - bin
           - ./vendor
           - node_modules
-          - api/clients/node/node_modules/
       # path is <localSubPath>:<containerPath>
       - path: ./src/migrations:${DEV_CONTAINER_WORKDIR}/run/config/outreach.io/migrations
         excludePaths:

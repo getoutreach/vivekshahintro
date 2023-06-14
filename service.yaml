@@ -1,8 +1,6 @@
 # example service.yaml
 name: vivekshahintro
 arguments:
-  grpcClients:
-    - node
   deployment:
     environments:
       - ops
