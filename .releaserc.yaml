@@ -19,6 +19,14 @@ plugins:
 
   # This creates fancy release notes in our Github release
   - "@semantic-release/release-notes-generator"
+  # Bump npm package.json version, and release to npm/github packages.
+  # See devbase for the Github Packages part.
+  - - "@semantic-release/npm"
+    - pkgRoot: api/clients/node
+  # Store the package.json updates in Git
+  - - "@semantic-release/git"
+    - assets:
+        - api/clients/node/package.json
   - "@semantic-release/github"
 
   ## <<Stencil::Block(customReleasePlugins)>>
